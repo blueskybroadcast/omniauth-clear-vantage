@@ -20,6 +20,7 @@ module OmniAuth
       def callback_phase
         self.env['omniauth.auth'] = auth_hash
         self.env['omniauth.origin'] = '/' + request.params['slug']
+        self.env['omniauth.redirect_url'] = request.params['redirect_url'].presence
         call_app!
       end
 
