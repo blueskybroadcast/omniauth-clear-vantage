@@ -7,6 +7,7 @@ module OmniAuth
       option :name, 'clear_vantage'
 
       option :client_options, { login_page_url: 'MUST BE PROVIDED' }
+      option :app_options, { app_event_id: nil }
 
       uid { info[:uid] }
 
@@ -21,6 +22,7 @@ module OmniAuth
         self.env['omniauth.auth'] = auth_hash
         self.env['omniauth.origin'] = '/' + request.params['slug']
         self.env['omniauth.redirect_url'] = request.params['redirect_url'].presence
+        self.env['omniauth.app_event_id'] = options.app_options.app_event_id.presence || request.params['app_event_id'].presence
         call_app!
       end
 
