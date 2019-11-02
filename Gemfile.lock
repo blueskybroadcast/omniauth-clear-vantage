@@ -29,7 +29,7 @@ GEM
     omniauth-oauth2 (1.4.0)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
-    rack (2.0.1)
+    rack (2.0.7)
     rake (11.2.2)
 
 PLATFORMS
